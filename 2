@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace prog2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+            Console.WriteLine("zadaj prve cislo");
+            string cislo1Input = Console.ReadLine();
+            int cislo1 = int.Parse(cislo1Input);
+
+            Console.WriteLine("zadaj operator (+-/*)");
+            string operation = Console.ReadLine();
+
+            Console.WriteLine("zadaj druhe cislo");
+            string cislo2Input = Console.ReadLine();
+            int cislo2 = int.Parse(cislo2Input);
+
+            int result;
+            if (operation == "+")
+            {
+                result = cislo1 + cislo2;
+            }
+            else if (operation == "-")
+            {
+                result = cislo1 - cislo2;
+            }
+            else if (operation == "*")
+            {
+                result = cislo1 * cislo2;
+            }
+            else
+                result = cislo1 / cislo2;
+
+            Console.WriteLine(cislo1.ToString() + operation + cislo2.ToString() + "=" + result.ToString());
+            */
+
+            Random random = new Random();
+            int znamka = random.Next(1, 6);
+            string vypis;
+            switch (znamka)
+            {
+                case 1:
+                    vypis = "vyborny";
+                    break;
+                case 2:
+                    vypis = "chvalitebny";
+                    break;
+                case 3:
+                    vypis = "dobry";
+                    break;
+                case 4:
+                    vypis = "dostatocny";
+                    break;
+                case 5:
+                    vypis = "nedostatocny";
+                    break;
+                default:
+                    vypis = "huh";
+                    break;
+            }
+            Console.WriteLine(znamka.ToString() + " : " + vypis.ToString());
+        }
+    }
+}
