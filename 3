@@ -39,7 +39,42 @@ namespace _0410
                 }
             }
             Console.WriteLine("1 - "+ a + " ,2 - " + b + " ,3 - "+c);
+            int prevNum = 0;
+            for (int i = 0; i < 10;)
+            {
 
+                num = r.Next(1, 4);
+                if (num!=prevNum)
+                {
+                    Console.WriteLine(num);
+                    i++;
+                }
+                prevNum=num; 
+                // som spesl :333
+
+                
+            int hpS = 100;
+            int hpB = 100;
+
+            while (hpS>0 && hpB>0)
+            {
+                hpS -= r.Next(10);
+                hpB -= r.Next(10);
+
+                Console.WriteLine("hp superman: " + hpS);
+                Console.WriteLine("hp batman: " + hpB);
+
+                if (hpS<=0)
+                {
+                    Console.WriteLine( "=-)o  <----mrtvolka Supermana (vyhral batman)");
+                }
+                else if (hpB<=0)
+                    Console.WriteLine("=-)o  <----mrtvolka Batmana (vyhral superman)");
+
+
+            }
+                
+            }
         }
     }
 }
