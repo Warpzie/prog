@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _0410
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num = 0;
+            Random r = new Random();
+            for (int i = 0; i < 1000; i++)
+            {
+                num = num + r.Next(101);
+            }
+            Console.WriteLine("priemer: "+ num/1000);
+
+            int a = 0;
+            int b = 0;
+            int c = 0;
+            for (int i = 0; i < 1000; i++)
+
+            {
+                num = r.Next(1, 4);
+                switch (num)
+                {
+                    case 1:
+                        a++;
+                        break;
+                    case 2:
+                        b++;
+                        break;
+                    case 3:
+                        c++;
+                        break;
+                }
+            }
+            Console.WriteLine("1 - "+ a + " ,2 - " + b + " ,3 - "+c);
+
+        }
+    }
+}
