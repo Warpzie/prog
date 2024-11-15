@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            StreamReader sr = new StreamReader("C:/Users/trunkvaltera23/source/repos/ConsoleApp2/ConsoleApp2/skore.txt");
+            
+            List<string> mena = new List<string>();
+            List<int> score = new List<int>();
+            /*
+            while (true)
+            {
+                string riadok = sr.ReadLine();
+                if (riadok == null)
+                {
+                    break;
+                }
+                string[] tmp = riadok.Split('\t');
+                score.Add(int.Parse(tmp[0]));
+                mena.Add(tmp[1]);
+            }
+            Console.WriteLine("meno?");
+            string meno = Console.ReadLine();
+            int index = -1;
+            for (int i = 0; i < mena.Count; i++)
+            {
+                if (mena[i] == meno)
+                {
+                    index = i;
+                } 
+            }
+            if (index == -1) 
+            {
+                Console.WriteLine("toto meno nieje v databaze");
+            }
+            else
+            {
+                Console.WriteLine("skore" + meno[index] + "je" + score[index]);
+            }
+        }*/
+    }
+}
+
+// zadanie : zisti meno,ak nie je v db tak ho pridaj, ak je tak zacni hru:program vygeneruje cislo a odpoveda ci je rovnake,vacsie alebo mensie ako cisco zadane hracom, po uhadnuti zapise pocet pokusov ku menu hraca
+Random r = new Random();
+            int pokusy = 0;
+            int hladane = r.Next(0, 100);
+            while (true)
+            {
+                Console.WriteLine("zadaj cislo");
+                int zadane = int.Parse(Console.ReadLine());
+                pokusy++;
+                if (hladane > zadane)
+                    Console.WriteLine("zadal si mensie");
+                else if (hladane < zadane)
+                    Console.WriteLine("zadal si vacsie");
+                else
+                    break;
+            }
+            Console.WriteLine("uhadol si na" + pokusy + "-krat");
+
