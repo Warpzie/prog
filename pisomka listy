@@ -1,0 +1,52 @@
+using System;
+
+namespace ConsoleApp8
+{
+    class Program
+    {
+      
+            static void Main(string[] args)
+            {
+                string[,] mena = {
+                { "nikol", "gogo", "johny", "obinn", "lukas", "ludek", "radovan", "sara", "tunak", "honza" },
+                { "faithful", "faithful", "faithful", "faithful", "faithful", "faithful", "faithful", "faithful", "faithful", "faithful" }
+                };
+                Random r = new Random();
+                int pocet = 0;
+
+                for (int i = 0; i < 4; i++)
+                {
+                    int index = r.Next(0, 10);
+                    mena[1, index] = "traitor";
+                }
+
+                for (int i = 0; i < 7; i++)
+                {
+                    Console.WriteLine("zadaj meno");
+                    string input = Console.ReadLine();
+                    for (int j = 0; j < 10; j++)
+                    {
+                        if (input == mena[0,j])
+                        {
+                            Console.WriteLine(mena[1,j]);
+                            if (mena[1, j] == "traitor")
+                            {
+                                pocet++;
+                            }
+                        }
+                    }
+                    
+                }
+                if (pocet > 1)
+                {
+                    Console.WriteLine("prehral si :<<");
+                }
+                else
+                {
+                    Console.WriteLine("vyhral si :>>");
+                }
+            }
+        
+    }
+    
+}
