@@ -14,10 +14,17 @@ namespace ConsoleApp8
                 Random r = new Random();
                 int pocet = 0;
 
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < 3; i++)
                 {
                     int index = r.Next(0, 10);
-                    mena[1, index] = "traitor";
+                    if(mena[1,index] == "traitor") 
+                    {
+                        i = i - 1; 
+                    }
+                    else
+                    {
+                        mena[1, index] = "traitor";
+                    }  
                 }
 
                 for (int i = 0; i < 7; i++)
@@ -37,7 +44,7 @@ namespace ConsoleApp8
                     }
                     
                 }
-                if (pocet > 1)
+                if (pocet < 3)
                 {
                     Console.WriteLine("prehral si :<<");
                 }
