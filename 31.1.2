@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+
+namespace _31._1._2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random r = new Random();
+            List<Auto> autoBazar = new List<Auto>();
+            autoBazar.Add(new Auto("BMW", r.Next(10000, 200000)));
+            autoBazar.Add(new Auto("Skoda", r.Next(10000, 200000)));
+            autoBazar.Add(new Auto("Toyota", r.Next(10000, 200000)));
+            autoBazar.Add(new Auto("Audi", r.Next(10000, 200000)));
+            Console.WriteLine("zobraz alebo uprav?");
+            string vstup = Console.ReadLine();
+            if (vstup == "zobraz")
+            {
+                for (int i = 0; i < autoBazar.Count; i++)
+                {
+                    Console.WriteLine("znacka : "+ autoBazar[i].getZnacka() + " ma najazdene " + autoBazar[i].getNajazdene());
+                }
+            }
+            else if (vstup == "uprav")
+            {
+
+            }
+            else
+            {
+                Console.WriteLine("zly vstup");
+            }
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace _31._1._2
+{
+    class Auto
+    {
+        string znacka;
+        int najazdene;
+        public Auto(string znacka, int najazdene)
+        {
+            this.znacka = znacka;
+            this.najazdene = najazdene;
+        }
+        public string getZnacka()
+        {
+            return this.znacka;   
+        }
+        public int getNajazdene()
+        {
+            return this.najazdene;
+        }
+        public void setZnacka(string znacka)
+        {
+            this.znacka = znacka;
+        } 
+        public void setNajazdene(int najazdene)
+        {
+            this.najazdene = najazdene;
+        }
+    }
+}
