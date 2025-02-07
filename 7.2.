@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace _7._2_
+{
+    class Kalkulacka
+    {
+        
+        public static int rok = 2025;
+        public static int scitaj(int a, int b)
+        {
+            return a + b;
+        }
+        public static int odcitaj(int a, int b)
+        {
+            return a - b;
+        }
+        public static int vynasob(int a, int b)
+        {
+            return a * b;
+        }
+        public static int vydel(int a, int b)
+        {
+            return a / b;
+        }
+    }
+}
+
+
+
+using System;
+
+namespace _7._2_
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("zadaj o kolko rokov");
+            int a =int.Parse( Console.ReadLine());
+            
+            Console.WriteLine("o " + a + " rokov bude rok " + Kalkulacka.scitaj(a,Kalkulacka.rok));
+            Console.WriteLine($"o {a} rokov bude rok { Kalkulacka.scitaj(a, Kalkulacka.rok)}");
+        }
+    }
+}
