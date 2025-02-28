@@ -1,0 +1,93 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace pisomka._28._2
+{
+    public class Automobil
+    {
+        public string znacka;
+        public string model;
+        public int rokVyroby;
+        public int km;
+        public int cena;
+        public bool suValidneData;
+        public Automobil(string znacka, string model, int rokVyroby, int km, int cena)
+        {
+            this.znacka = znacka;
+            this.model = model;
+            this.rokVyroby = rokVyroby;
+            this.km = km;
+            this.cena = cena;
+
+        }
+        public Automobil() : base()
+        {
+            znacka = "";
+            model = "";
+            rokVyroby = 0;
+            km = 0;
+            cena = 0;
+        }
+
+        public Automobil(string znacka, string model)
+        {
+        }
+
+        bool data;
+        public bool SuValidneData()
+        {
+            if (znacka != "" && model!="" && rokVyroby!= 0 && km !=0 && cena != 0)
+            {
+                data = true;
+            }
+            return data;
+        }
+    }
+    class Printer
+    {
+        public static void sendToPrinter(Automobil automobil)
+        {
+            Console.WriteLine("--------------------------");
+            Console.WriteLine($"Značka:\t \t {automobil.znacka}");
+            Console.WriteLine($"Model:\t \t {automobil.model}");
+            Console.WriteLine($"Rok výroby: \t {automobil.rokVyroby}");
+            Console.WriteLine($"Počet km: \t {automobil.km}");
+            Console.WriteLine($"Cena:\t \t {automobil.cena}");
+            Console.WriteLine("--------------------------");
+
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+
+namespace pisomka._28._2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Automobil> autobazar = new List<Automobil>();
+            autobazar.Add(new Automobil());
+            autobazar.Add(new Automobil("Škoda", "octavia", 100000, 2019, 5999));
+            autobazar.Add(new Automobil("Škoda", "superb"));
+            autobazar.Add(new Automobil("Ford", "focus", 90000, 2015, 3500));
+            autobazar.Add(new Automobil("KIA", "ceed", 200000, 2022, 4500));
+            autobazar.Add(new Automobil("Nissan", "navara"));
+            autobazar.Add(new Automobil());
+
+            Automobil auto = new Automobil("Toyota", "corola");
+            autobazar.Add(auto);
+
+            foreach (var item in autobazar)
+            {
+                if (item.SuValidneData())
+                    Printer.sendToPrinter(item);
+            }
+        }
+    }
+}
+
+
